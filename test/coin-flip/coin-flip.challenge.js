@@ -6,7 +6,7 @@ const AttackCoinFlip = contract.fromArtifact('AttackCoinFlip');
 
 const { expect } = require('chai');
 
-describe('[Challenge] Fallback', function () {
+describe('[Challenge] Coin Flip', function () {
 
   const [deployer, attacker, someUser, ...otherAccounts] = accounts;
 
