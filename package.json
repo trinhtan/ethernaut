@@ -4,6 +4,11 @@
     "fallback": "npm run compile && npx mocha --timeout 5000 --exit test/fallback/fallback.challenge.js",
     "fallout": "npm run compile && npx mocha --timeout 5000 --exit test/fallout/fallout.challenge.js",
     "coin-flip": "npm run compile && npx mocha --timeout 5000 --exit test/coin-flip/coin-flip.challenge.js",
+    "telephone": "npm run compile && npx mocha --timeout 5000 --exit test/telephone/telephone.challenge.js",
+    "token": "npm run compile && npx mocha --timeout 5000 --exit test/token/token.challenge.js",
+    "force": "npm run compile && npx mocha --timeout 5000 --exit test/force/force.challenge.js",
+    "king": "npm run compile && npx mocha --timeout 5000 --exit test/king/king.challenge.js",
+    "reentrance": "npm run compile && npx mocha --timeout 5000 --exit test/reentrance/reentrance.challenge.js",
     "compile": "npx buidler compile"
   },
   "license": "MIT",
