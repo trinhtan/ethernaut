@@ -1,17 +1,28 @@
 {
   "scripts": {
-    "test": "npm run compile && npx mocha --timeout 5000 --exit --recursive test",
-    "fallback": "npm run compile && npx mocha --timeout 5000 --exit test/fallback/fallback.challenge.js",
-    "fallout": "npm run compile && npx mocha --timeout 5000 --exit test/fallout/fallout.challenge.js",
-    "coin-flip": "npm run compile && npx mocha --timeout 5000 --exit test/coin-flip/coin-flip.challenge.js",
-    "compile": "npx buidler compile"
+    "test": "npx truffle test test/",
+    "fallback": "npx truffle test test/fallback/fallback.challenge.js",
+    "fallout": "npx truffle test test/fallout/fallout.challenge.js",
+    "coin-flip": "npx truffle test test/coin-flip/coin-flip.challenge.js",
+    "telephone": "npx truffle test test/telephone/telephone.challenge.js",
+    "token": "npx truffle test test/token/token.challenge.js",
+    "force": "npx truffle test test/force/force.challenge.js",
+    "king": "npx truffle test test/king/king.challenge.js",
+    "reentrance": "npx truffle test test/reentrance/reentrance.challenge.js",
+    "elevator": "npx truffle test test/elevator/elevator.challenge.js",
+    "gatekeeper-two": "npx truffle test test/gatekeeper-two/gatekeeper-two.challenge.js",
+    "naught-coin": "npx truffle test test/naught-coin/naught-coin.challenge.js",
+    "compile": "npx truffle compile"
   },
   "license": "MIT",
   "dependencies": {
-    "@nomiclabs/buidler": "1.4.7",
-    "@openzeppelin/contracts": "2.3.0",
+    "@nomiclabs/buidler": "1.4.8",
+    "@openzeppelin/contracts": "^3.0.0",
     "@openzeppelin/test-environment": "0.1.3",
     "@openzeppelin/test-helpers": "0.5.5",
-    "mocha": "7.1.1"
+    "@truffle/hdwallet-provider": "^1.2.0",
+    "dotenv": "^8.2.0",
+    "mocha": "7.1.1",
+    "truffle": "^5.1.56"
   }
 }

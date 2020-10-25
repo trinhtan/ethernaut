@@ -1,16 +1,10 @@
-const { ether, expectRevert, expectEvent, } = require('@openzeppelin/test-helpers');
-const { accounts, contract } = require('@openzeppelin/test-environment');
-
-const Fallback = contract.fromArtifact('Fallback');
-
+const { ether } = require('@openzeppelin/test-helpers');
+const Fallback = artifacts.require('Fallback');
 const { expect } = require('chai');
 const balance = require('@openzeppelin/test-helpers/src/balance');
 const send = require('@openzeppelin/test-helpers/src/send');
 
-describe('[Challenge] Fallback', function () {
-
-  const [deployer, attacker, someUser, ...otherAccounts] = accounts;
-
+contract('[Challenge] Fallback', function ([deployer, attacker, someUser, ...otherAccounts]) {
   before(async function () {
     /** SETUP SCENARIO */
     this.fallback = await Fallback.new({ from: deployer });
@@ -28,9 +22,7 @@ describe('[Challenge] Fallback', function () {
   after(async function () {
     /** SUCCESS CONDITIONS */
 
-    expect(
-      await balance.current(this.fallback.address)
-    ).to.be.bignumber.eq('0');
+    expect(await balance.current(this.fallback.address)).to.be.bignumber.eq('0');
 
     expect(await balance.current(attacker)).to.be.bignumber.gte(this.attackerBeforeBalance);
 

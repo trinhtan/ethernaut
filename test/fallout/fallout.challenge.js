@@ -1,14 +1,7 @@
-const { ether, expectRevert, expectEvent, } = require('@openzeppelin/test-helpers');
-const { accounts, contract } = require('@openzeppelin/test-environment');
-
-const Fallout = contract.fromArtifact('Fallout');
-
+const Fallout = artifacts.require('Fallout');
 const { expect } = require('chai');
 
-describe('[Challenge] Fallback', function () {
-
-  const [deployer, attacker, someUser, ...otherAccounts] = accounts;
-
+contract('[Challenge] Fallout', function ([deployer, attacker, someUser, ...otherAccounts]) {
   before(async function () {
     /** SETUP SCENARIO */
     this.fallout = await Fallout.new({ from: deployer });
@@ -17,12 +10,10 @@ describe('[Challenge] Fallback', function () {
   it('Exploit', async function () {
     /** YOUR EXPLOIT GOES HERE */
     await this.fallout.Fal1out({ from: attacker });
-
   });
 
   after(async function () {
     /** SUCCESS CONDITIONS */
     expect(await this.fallout.owner()).eq(attacker);
-
   });
 });

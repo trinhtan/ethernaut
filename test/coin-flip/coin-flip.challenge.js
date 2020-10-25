@@ -1,14 +1,12 @@
-const { ether, expectRevert, expectEvent, } = require('@openzeppelin/test-helpers');
-const { accounts, contract } = require('@openzeppelin/test-environment');
+const { ether, expectRevert, expectEvent } = require('@openzeppelin/test-helpers');
 
-const CoinFlip = contract.fromArtifact('CoinFlip');
-const AttackCoinFlip = contract.fromArtifact('AttackCoinFlip');
+const CoinFlip = artifacts.require('CoinFlip');
+const AttackCoinFlip = artifacts.require('AttackCoinFlip');
 
 const { expect } = require('chai');
 
-describe('[Challenge] Fallback', function () {
-
-  const [deployer, attacker, someUser, ...otherAccounts] = accounts;
+contract('[Challenge] Coin Flip', function ([deployer, attacker, someUser, ...otherAccounts]) {
+  // const [deployer, attacker, someUser, ...otherAccounts] = accounts;
 
   before(async function () {
     /** SETUP SCENARIO */

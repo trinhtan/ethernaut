@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.6.0;
 
 import "@openzeppelin/contracts/math/SafeMath.sol";
 
@@ -37,7 +37,7 @@ contract Fallback {
     owner.transfer(address(this).balance);
   }
 
-  function() payable external {
+  fallback() external payable {
     require(msg.value > 0 && contributions[msg.sender] > 0);
     owner = msg.sender;
   }
